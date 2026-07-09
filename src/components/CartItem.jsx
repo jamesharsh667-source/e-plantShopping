@@ -1,3 +1,5 @@
+import fallbackPlantImage from "../assets/hero.png";
+
 function CartItem({
   plant,
   index,
@@ -5,6 +7,11 @@ function CartItem({
   increaseQuantity,
   decreaseQuantity,
 }) {
+  const handleImageError = (event) => {
+    event.currentTarget.onerror = null;
+    event.currentTarget.src = fallbackPlantImage;
+  };
+
   return (
     <div className="cart-item">
       <h3>{plant.name}</h3>
@@ -13,6 +20,7 @@ function CartItem({
         src={plant.image}
         alt={plant.name}
         width="120"
+        onError={handleImageError}
       />
 
       <p>Price: ${plant.price}</p>
