@@ -1,3 +1,5 @@
+import CartItem from "./CartItem";
+
 function ShoppingCart({ cart, removeFromCart }) {
   return (
     <div className="shopping-cart">
@@ -7,17 +9,12 @@ function ShoppingCart({ cart, removeFromCart }) {
         <p>Your cart is empty.</p>
       ) : (
         cart.map((plant, index) => (
-          <div key={index} className="cart-item">
-
-            <h4>{plant.name}</h4>
-
-            <p>${plant.price}</p>
-
-            <button onClick={() => removeFromCart(index)}>
-              Remove
-            </button>
-
-          </div>
+          <CartItem
+            key={index}
+            plant={plant}
+            index={index}
+            removeFromCart={removeFromCart}
+          />
         ))
       )}
     </div>
