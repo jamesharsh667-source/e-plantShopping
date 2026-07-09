@@ -1,13 +1,15 @@
-import ShoppingCart from "./components/ShoppingCart";
 import { useState } from "react";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
 import AboutUs from "./components/AboutUs";
 import ProductList from "./components/ProductList";
+import ShoppingCart from "./components/ShoppingCart";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const [cart, setCart] = useState([]);
+const [showLandingPage, setShowLandingPage] = useState(true);
 
   const addToCart = (plant) => {
     setCart([...cart, plant]);
@@ -18,14 +20,25 @@ function App() {
     setCart(updatedCart);
   };
 
-  return (
-    <>
-      <Navbar />
-      <AboutUs />
-      <ProductList addToCart={addToCart} />
-      <ShoppingCart cart={cart} removeFromCart={removeFromCart} />
-    </>
-  );
+ return (
+  <>
+    {showLandingPage ? (
+      <LandingPage
+        onGetStarted={() => setShowLandingPage(false)}
+      />
+    ) : (
+      <>
+        <Navbar />
+        <AboutUs />
+        <ProductList addToCart={addToCart} />
+        <ShoppingCart
+          cart={cart}
+          removeFromCart={removeFromCart}
+        />
+      </>
+    )}
+  </>
+);
 }
 
 export default App;
