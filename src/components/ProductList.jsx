@@ -1,7 +1,7 @@
 import plants from "../data/plants";
 import ProductCard from "./ProductCard";
 
-function ProductList({ addToCart }) {
+function ProductList({ addToCart, cart }) {
   const indoorPlants = plants.filter(
     (plant) => plant.category === "Indoor"
   );
@@ -24,6 +24,7 @@ function ProductList({ addToCart }) {
             key={plant.id}
             plant={plant}
             addToCart={addToCart}
+            isAdded={cart.some((item) => item.id === plant.id)}
           />
         ))}
       </div>
@@ -35,6 +36,7 @@ function ProductList({ addToCart }) {
             key={plant.id}
             plant={plant}
             addToCart={addToCart}
+            isAdded={cart.some((item) => item.id === plant.id)}
           />
         ))}
       </div>
@@ -46,6 +48,7 @@ function ProductList({ addToCart }) {
             key={plant.id}
             plant={plant}
             addToCart={addToCart}
+            isAdded={cart.some((item) => item.id === plant.id)}
           />
         ))}
       </div>

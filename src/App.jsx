@@ -62,9 +62,14 @@ function App() {
         />
       ) : (
         <>
-          <Navbar cartCount={cart.length} />
+          <Navbar
+            cartCount={cart.reduce((total, item) => total + item.quantity, 0)}
+          />
           <AboutUs />
-          <ProductList addToCart={addToCart} />
+          <ProductList
+            addToCart={addToCart}
+            cart={cart}
+          />
           <ShoppingCart
             cart={cart}
             removeFromCart={removeFromCart}

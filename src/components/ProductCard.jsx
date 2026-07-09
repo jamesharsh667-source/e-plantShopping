@@ -1,11 +1,6 @@
-import { useState } from "react";
-
-function ProductCard({ plant, addToCart }) {
-  const [added, setAdded] = useState(false);
-
+function ProductCard({ plant, addToCart, isAdded }) {
   const handleAdd = () => {
     addToCart(plant);
-    setAdded(true);
   };
 
   return (
@@ -22,9 +17,9 @@ function ProductCard({ plant, addToCart }) {
 
       <button
         onClick={handleAdd}
-        disabled={added}
+        disabled={isAdded}
       >
-        {added ? "Added to Cart" : "Add to Cart"}
+        {isAdded ? "Added to Cart" : "Add to Cart"}
       </button>
     </div>
   );
