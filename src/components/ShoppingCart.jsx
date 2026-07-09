@@ -1,8 +1,13 @@
 import CartItem from "./CartItem";
 
-function ShoppingCart({ cart, removeFromCart }) {
+function ShoppingCart({
+  cart,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) {
   const grandTotal = cart.reduce(
-    (total, item) => total + item.price,
+    (total, item) => total + item.price * item.quantity,
     0
   );
 
@@ -20,6 +25,8 @@ function ShoppingCart({ cart, removeFromCart }) {
               plant={plant}
               index={index}
               removeFromCart={removeFromCart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
             />
           ))}
 

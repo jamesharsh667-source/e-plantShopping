@@ -1,18 +1,10 @@
-import { useState } from "react";
-
-function CartItem({ plant, index, removeFromCart }) {
-  const [quantity, setQuantity] = useState(1);
-
-  const increase = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
+function CartItem({
+  plant,
+  index,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) {
   return (
     <div className="cart-item">
       <h3>{plant.name}</h3>
@@ -26,17 +18,17 @@ function CartItem({ plant, index, removeFromCart }) {
       <p>Price: ${plant.price}</p>
 
       <div>
-        <button onClick={decrease}>-</button>
+        <button onClick={() => decreaseQuantity(index)}>-</button>
 
         <span style={{ margin: "0 15px" }}>
-          {quantity}
+          {plant.quantity}
         </span>
 
-        <button onClick={increase}>+</button>
+        <button onClick={() => increaseQuantity(index)}>+</button>
       </div>
 
       <p>
-        Total: <strong>${plant.price * quantity}</strong>
+        Total: <strong>${plant.price * plant.quantity}</strong>
       </p>
 
       <button onClick={() => removeFromCart(index)}>
