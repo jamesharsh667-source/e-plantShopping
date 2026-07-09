@@ -174,3 +174,16 @@ p {
 .get-started-btn:hover {
   background: #388e3c;
 }
+
+.product-list-container {
+  padding: 20px;
+}
+
+.category-title {
+  margin: 30px 0 15px;
+  color: #2e7d32;
+  font-size: 30px;
+  text-align: left;
+  border-left: 6px solid #2e7d32;
+  padding-left: 15px;
+}

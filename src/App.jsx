@@ -11,16 +11,16 @@ function App() {
   const [cart, setCart] = useState([]);
 const [showLandingPage, setShowLandingPage] = useState(true);
 
-  const addToCart = (plant) => {
-    setCart([...cart, plant]);
-  };
+ const addToCart = (plant) => {
+  setCart((prevCart) => [...prevCart, plant]);
+};
 
   const removeFromCart = (index) => {
     const updatedCart = cart.filter((_, i) => i !== index);
     setCart(updatedCart);
   };
 
- return (
+return (
   <>
     {showLandingPage ? (
       <LandingPage
@@ -28,7 +28,7 @@ const [showLandingPage, setShowLandingPage] = useState(true);
       />
     ) : (
       <>
-        <Navbar />
+        <Navbar cartCount={cart.length} />
         <AboutUs />
         <ProductList addToCart={addToCart} />
         <ShoppingCart
