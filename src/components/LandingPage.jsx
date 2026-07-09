@@ -1,13 +1,6 @@
-import hero from "../assets/hero.png";
-
 function LandingPage({ onGetStarted }) {
   return (
-    <div
-      className="landing-page"
-      style={{
-        backgroundImage: `url(${hero})`,
-      }}
-    >
+    <div className="background-image">
       <div className="overlay">
         <h1>🌱 Paradise Nursery</h1>
 
