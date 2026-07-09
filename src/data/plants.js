@@ -1,4 +1,5 @@
 const plants = [
+  // 🌿 Indoor Plants
   {
     id: 1,
     name: "Snake Plant",
@@ -17,6 +18,16 @@ const plants = [
   },
   {
     id: 3,
+    name: "ZZ Plant",
+    price: 18,
+    category: "Indoor",
+    description: "Low-maintenance indoor plant with glossy leaves.",
+    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411"
+  },
+
+  // 🌸 Flowering Plants
+  {
+    id: 4,
     name: "Peace Lily",
     price: 18,
     category: "Flowering",
@@ -24,7 +35,7 @@ const plants = [
     image: "https://images.unsplash.com/photo-1463320726281-696a485928c7"
   },
   {
-    id: 4,
+    id: 5,
     name: "Rose",
     price: 25,
     category: "Flowering",
@@ -32,7 +43,17 @@ const plants = [
     image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7"
   },
   {
-    id: 5,
+    id: 6,
+    name: "Orchid",
+    price: 30,
+    category: "Flowering",
+    description: "Elegant flowering plant with long-lasting flowers.",
+    image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551"
+  },
+
+  // 🌵 Succulents
+  {
+    id: 7,
     name: "Aloe Vera",
     price: 12,
     category: "Succulent",
@@ -40,12 +61,20 @@ const plants = [
     image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735"
   },
   {
-    id: 6,
+    id: 8,
     name: "Cactus",
     price: 10,
     category: "Succulent",
     description: "Low-maintenance desert plant perfect for beginners.",
     image: "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc"
+  },
+  {
+    id: 9,
+    name: "Jade Plant",
+    price: 16,
+    category: "Succulent",
+    description: "A beautiful succulent believed to bring good luck.",
+    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78"
   }
 ];
 
