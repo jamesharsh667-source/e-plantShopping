@@ -4,9 +4,19 @@ function CartItem({
   plant,
   index,
   removeFromCart,
-  increaseQuantity,
-  decreaseQuantity,
+  increaseQuantity: updateCartQuantity,
+  decreaseQuantity: reduceCartQuantity,
 }) {
+  const itemTotal = plant.price * plant.quantity;
+
+  const increaseQuantity = () => {
+    updateCartQuantity(index);
+  };
+
+  const decreaseQuantity = () => {
+    reduceCartQuantity(index);
+  };
+
   const handleImageError = (event) => {
     event.currentTarget.onerror = null;
     event.currentTarget.src = fallbackPlantImage;
@@ -26,17 +36,17 @@ function CartItem({
       <p>Price: ${plant.price}</p>
 
       <div>
-        <button onClick={() => decreaseQuantity(index)}>-</button>
+        <button onClick={decreaseQuantity}>-</button>
 
         <span style={{ margin: "0 15px" }}>
           {plant.quantity}
         </span>
 
-        <button onClick={() => increaseQuantity(index)}>+</button>
+        <button onClick={increaseQuantity}>+</button>
       </div>
 
       <p>
-        Total: <strong>${plant.price * plant.quantity}</strong>
+        Total: <strong>${itemTotal}</strong>
       </p>
 
       <button onClick={() => removeFromCart(index)}>

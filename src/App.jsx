@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-import Navbar from "./components/Navbar";
 import AboutUs from "./components/AboutUs";
 import ProductList from "./components/ProductList";
 import ShoppingCart from "./components/ShoppingCart";
@@ -62,9 +61,6 @@ function App() {
         />
       ) : (
         <>
-          <Navbar
-            cartCount={cart.reduce((total, item) => total + item.quantity, 0)}
-          />
           <AboutUs />
           <ProductList
             addToCart={addToCart}
