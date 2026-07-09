@@ -20,11 +20,15 @@ const [showLandingPage, setShowLandingPage] = useState(true);
     setCart(updatedCart);
   };
 
+  const handleGetStarted = () => {
+  setShowLandingPage(false);
+};
+
 return (
   <>
     {showLandingPage ? (
       <LandingPage
-        onGetStarted={() => setShowLandingPage(false)}
+        onGetStarted={handleGetStarted}
       />
     ) : (
       <>

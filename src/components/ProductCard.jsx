@@ -24,7 +24,7 @@ function ProductCard({ plant, addToCart }) {
         onClick={handleAdd}
         disabled={added}
       >
-        {added ? "Added ✓" : "Add to Cart"}
+        {added ? "Added to Cart" : "Add to Cart"}
       </button>
     </div>
   );
